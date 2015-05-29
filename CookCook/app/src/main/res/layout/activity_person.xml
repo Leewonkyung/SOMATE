@@ -9,6 +9,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!--3:5 리니어 레이아웃임-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,18 +17,45 @@
         android:background="#FF00FF"
         android:orientation="vertical"
         >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:background="#446655"
-            >
-        </LinearLayout>
+        <!-- 사용자 정보가 뜨는 부분임 3X3 테이블처럼, 비율은 1:2:1 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#632451"
+            android:orientation="horizontal"
+            >
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+            >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </LinearLayout>
+                <!-- 이미지가 들어갈 부분! -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <ImageButton
+                        android:id="@+id/person_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                    />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </LinearLayout>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             ></LinearLayout>
     </LinearLayout>
 
