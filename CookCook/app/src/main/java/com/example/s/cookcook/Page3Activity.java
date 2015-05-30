@@ -14,20 +14,20 @@ import android.widget.Toast;
  */
 public class Page3Activity extends Fragment {
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
 
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
-        RelativeLayout layout=(RelativeLayout)inflater.inflate(R.layout.activity_page3,container,false);
+	public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
+		RelativeLayout layout=(RelativeLayout)inflater.inflate(R.layout.activity_page3,container,false);
 
-        Button testBtn = (Button)layout.findViewById(R.id.page1btn);
-        testBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(),"세번째 페이지입니다.",Toast.LENGTH_SHORT).show();
-            }
-        });
-        return layout;
-    }
+		Button testBtn = (Button)layout.findViewById(R.id.page1btn);
+		testBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getActivity(),"¼¼¹ø?° Æ???????´?´?.",Toast.LENGTH_SHORT).show();
+			}
+		});
+		return layout;
+	}
 }

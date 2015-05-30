@@ -1,78 +1,48 @@
 package com.example.s.cookcook;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.app.Activity;
+import android.app.TabActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
 
+public class MainActivity extends Activity {
+	/** Called when the activity is first created. */
 
-public class MainActivity extends FragmentActivity {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-    private int NUM_PAGES = 3; //최대 페이지의 수
-    /*Fragment numbering*/
-    public final static int FRAGMENT_PAGE1 = 0;
-    public final static int FRAGMENT_PAGE2 = 1;
-    public final static int FRAGMENT_PAGE3 = 2;
+		TabHost tabHost = (TabHost)findViewById(R.id.tab_host);
+		tabHost.setup();
 
-    ViewPager mViewPager;
+		// Tab1 Setting
+		TabSpec tabSpec1 = tabHost.newTabSpec("Tab1");
+		tabSpec1.setIndicator("Main"); // Tab Subject
+		tabSpec1.setContent(R.id.tab_view1); // Tab Content
+		tabHost.addTab(tabSpec1);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+		// Tab2 Setting
+		TabSpec tabSpec2 = tabHost.newTabSpec("Tab2");
+		tabSpec2.setIndicator("Cate"); // Tab Subject
+		tabSpec2.setContent(R.id.tab_view2); // Tab Content
+		tabHost.addTab(tabSpec2);
 
-        //viewpager를 검색하고 Adapter를 달아주고, 첫 페이지를 선정해준다
-        mViewPager = (ViewPager)findViewById(R.id.pager);
-        mViewPager.setAdapter(new pagerAdapter(getSupportFragmentManager()));
-        mViewPager.setCurrentItem(FRAGMENT_PAGE1);
-    }
+		// Tab3 Setting
+		TabSpec tabSpec3 = tabHost.newTabSpec("Tab3");
+		tabSpec3.setIndicator("Reci"); // Tab Subject
+		tabSpec3.setContent(R.id.tab_view3); // Tab Content
+		tabHost.addTab(tabSpec3);
 
-    //FragmentPageAdpter : Fragment로써 각각의 페이지를 어떻게 보여줄지 정의한다
-    private  class pagerAdapter extends FragmentPagerAdapter {
-        public pagerAdapter(android.support.v4.app.FragmentManager fm) {
-            super(fm);
-        }
+		// Tab4 Setting
+		TabSpec tabSpec4 = tabHost.newTabSpec("Tab4");
+		tabSpec4.setIndicator("User"); // Tab Subject
+		tabSpec4.setContent(R.id.tab_view4); // Tab Content
+		tabHost.addTab(tabSpec4);
 
-        public Fragment getItem(int position){
-            switch (position){
-                case FRAGMENT_PAGE1:
-                    return new Page1Activity();
-                case FRAGMENT_PAGE2:
-                    return new Page2Activity();
-                case FRAGMENT_PAGE3:
-                    return new Page3Activity();
-                default:
-                    return null;
-            }
-        }
-
-        //셍성 가능한 페이지 개수를 반환해준다.
-        public int getCount() {
-            return NUM_PAGES;
-        }
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+		// show First Tab Content
+		tabHost.setCurrentTab(0);
+	}
 }
