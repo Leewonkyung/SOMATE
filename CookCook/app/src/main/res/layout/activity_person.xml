@@ -9,40 +9,89 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!-- 사용자의 정보를 담은 부분, 더 큰 레이아웃 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:background="#FF00FF"
-        android:orientation="vertical"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:background="#446655"
-            >
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#632451"
-            ></LinearLayout>
-    </LinearLayout>
+        android:orientation="horizontal"
+        android:background="#F3F3F3">
 
+        <!-- 비율을 위한 빈공간 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </LinearLayout>
+
+        <!-- 이미지와 아이디를 담을 레이아웃 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <!-- 이미지를 담을 부분 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:padding="5dp">
+                <!-- 사용자 이미지-->
+                <ImageButton
+                    android:id="@+id/user_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <!-- 아이디를 담을 부분-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:text="userid입니다"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 설정 버튼 레이아웃-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right">
+            <!-- 설정버튼 -->
+            <Button
+                android:id="@+id/user_setting"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                />
+        </LinearLayout>
+    </LinearLayout> <!-- 사용자 레이아웃 끝 -->
+
+    <!-- 추가 버튼을 담은 레이아웃 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        android:background="#789153"
+        android:layout_weight="1"
         >
-        <TextView
+        <Button
+            android:id="@+id/folder_add_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20dp"
-            android:text="담기"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="폴더 추가"
             />
     </LinearLayout>
+
+    <!-- 폴더 목록을 담은 레이아웃, 스크롤 뷰로 구현하기 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="#335577">
+    </ScrollView>
 </LinearLayout>
