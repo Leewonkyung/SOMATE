@@ -16,9 +16,7 @@ import android.widget.TabHost;
  * Created by moon3075 on 2015-02-23.
  */
 public class MainActivity extends TabActivity {
-
     Intent intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
