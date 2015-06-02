@@ -1,19 +1,13 @@
 package com.example.s.cookcook;
 
-import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TabHost;
 
 /**
- * Created by moon3075 on 2015-02-23.
+ * Created by moon3075 on 2015-06-01.
  */
 public class MainActivity extends TabActivity {
     Intent intent;
@@ -26,7 +20,7 @@ public class MainActivity extends TabActivity {
         TabHost tabHost = getTabHost();
         TabHost.TabSpec spec;
 
-        intent = new Intent().setClass(this, inflate_one.class);
+        intent = new Intent().setClass(this, WriteActivity.class);
         spec = tabHost.newTabSpec("main").setIndicator("MAIN",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
@@ -37,7 +31,7 @@ public class MainActivity extends TabActivity {
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent().setClass(this, inflate_one.class);
+        intent = new Intent().setClass(this, WriteActivity.class);
         spec = tabHost.newTabSpec("reci").setIndicator("RECI",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);

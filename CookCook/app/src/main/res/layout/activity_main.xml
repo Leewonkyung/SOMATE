@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <TabHost android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@android:id/tabhost" android:layout_gravity="center_horizontal">
+    <TabHost
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@android:id/tabhost"
+        android:layout_gravity="center_horizontal">
 
 
-        -<LinearLayout android:layout_height="fill_parent" android:layout_width="fill_parent" android:orientation="vertical">
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical">
 
-        <TabWidget android:background="#ffececec" android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@android:id/tabs"> </TabWidget>
+        <TabWidget
+            android:background="#ffececec"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@android:id/tabs"> </TabWidget>
 
 
-        -<FrameLayout android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@android:id/tabcontent">
+        <FrameLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:id="@android:id/tabcontent">
 
-        <LinearLayout android:layout_height="fill_parent" android:layout_width="fill_parent" android:orientation="vertical" android:id="@+id/linearLayout"/>
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout"/>
 
-        <LinearLayout android:layout_height="fill_parent" android:layout_width="fill_parent" android:orientation="vertical" android:id="@+id/linearLayout2"/>
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout2"/>
 
     </FrameLayout>
 

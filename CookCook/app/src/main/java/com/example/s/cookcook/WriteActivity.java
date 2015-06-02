@@ -6,7 +6,7 @@ import android.os.Bundle;
 /**
  * Created by moon3075 on 2015-06-02.
  */
-public class inflate_one extends Activity{
+public class WriteActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write);
