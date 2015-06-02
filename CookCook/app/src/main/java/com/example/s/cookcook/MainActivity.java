@@ -27,23 +27,23 @@ public class MainActivity extends TabActivity {
         TabHost.TabSpec spec;
 
         intent = new Intent().setClass(this, inflate_one.class);
-        spec = tabHost.newTabSpec("Plan").setIndicator("Plan",
+        spec = tabHost.newTabSpec("main").setIndicator("MAIN",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
 
 
-        intent = new Intent().setClass(this, inflate_one.class);
-        spec = tabHost.newTabSpec("map").setIndicator("Maps",
+        intent = new Intent().setClass(this, CategoriActivity.class);
+        spec = tabHost.newTabSpec("categori").setIndicator("CATE",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
 
         intent = new Intent().setClass(this, inflate_one.class);
-        spec = tabHost.newTabSpec("map").setIndicator("Maps",
+        spec = tabHost.newTabSpec("reci").setIndicator("RECI",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent().setClass(this, inflate_one.class);
-        spec = tabHost.newTabSpec("map").setIndicator("Maps",
+        intent = new Intent().setClass(this, UserActivity.class);
+        spec = tabHost.newTabSpec("user").setIndicator("USER",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
 

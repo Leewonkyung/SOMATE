@@ -18,6 +18,7 @@
 
         <activity android:name=".UserActivity"></activity>
         <activity android:name=".inflate_one"/>
+        <activity android:name=".CategoriActivity"/>
 
     </application>
 
