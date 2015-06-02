@@ -25,7 +25,7 @@ public class Page1Activity extends Fragment {
 		testBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getActivity(),"?©ö©ö©ª?¡Æ ¨¡???????¢¥?¢¥?.",Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getActivity(),"?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ ï¿½ï¿½???????ï¿½ï¿½?ï¿½ï¿½?.",Toast.LENGTH_SHORT).show();
 			}
 		});
 		return layout;
