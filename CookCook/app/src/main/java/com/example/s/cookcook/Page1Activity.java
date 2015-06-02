@@ -1,3 +1,12 @@
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+
+import com.example.s.cookcook.R;
+
 package com.example.s.cookcook;
 
 import android.os.Bundle;
