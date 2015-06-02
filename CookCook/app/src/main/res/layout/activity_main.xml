@@ -17,13 +17,6 @@
             android:paddingTop="69px" >
 
             <LinearLayout
-                android:id="@+id/tab_view4"
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/tab_view1"
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
@@ -46,6 +39,14 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="left|bottom">
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab_view4"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            </LinearLayout>
         </FrameLayout>
     </TabHost>
+
 </LinearLayout>

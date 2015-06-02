@@ -1,3 +1,12 @@
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+
+import com.example.s.cookcook.R;
+
 package com.example.s.cookcook;
 
 import android.os.Bundle;
@@ -25,7 +34,7 @@ public class Page1Activity extends Fragment {
 		testBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getActivity(),"?©ö©ö©ª?¡Æ ¨¡???????¢¥?¢¥?.",Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getActivity(),"?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ ï¿½ï¿½???????ï¿½ï¿½?ï¿½ï¿½?.",Toast.LENGTH_SHORT).show();
 			}
 		});
 		return layout;
