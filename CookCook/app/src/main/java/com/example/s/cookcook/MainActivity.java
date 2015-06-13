@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.TabHost;
 
 /**
- * Created by moon3075 on 2015-06-01.
+ * Created by moon3075 on 2015-02-23.
  */
 public class MainActivity extends TabActivity {
     Intent intent;
@@ -31,7 +31,7 @@ public class MainActivity extends TabActivity {
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent().setClass(this, WriteActivity.class);
+        intent = new Intent().setClass(this, CategoriActivity.class);
         spec = tabHost.newTabSpec("reci").setIndicator("RECI",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
