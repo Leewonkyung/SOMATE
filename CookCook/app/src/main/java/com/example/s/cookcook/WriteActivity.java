@@ -16,5 +16,26 @@ public class WriteActivity extends Activity{
         setContentView(R.layout.activity_write);
 
         Button btn_start=(Button)findViewById(R.id.btn_start);
+        final int REQUEST_CODE_NEXT=3000;
+
+
+        View.OnClickListener listener= new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                switch (v.getId())
+                {
+                    case R.id.btn_start:
+                        Intent intent = new Intent(getBaseContext(), StepActivity.class);
+                        startActivityForResult(intent, REQUEST_CODE_NEXT);
+                        break;
+                }
+            }
+        };
+
+        btn_start.setOnClickListener(listener);
+
+
     }
 }

@@ -20,6 +20,7 @@
         <activity android:name=".WriteActivity"/>
         <activity android:name=".CategoriActivity"/>
         <activity android:name=".MainActivity2"/>
+        <activity android:name=".StepActivity"/>
 
     </application>
 
