@@ -20,7 +20,7 @@ public class MainActivity extends TabActivity {
         TabHost tabHost = getTabHost();
         TabHost.TabSpec spec;
 
-        intent = new Intent().setClass(this, WriteActivity.class);
+        intent = new Intent().setClass(this, MainActivity2.class);
         spec = tabHost.newTabSpec("main").setIndicator("MAIN",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
@@ -31,7 +31,7 @@ public class MainActivity extends TabActivity {
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent().setClass(this, CategoriActivity.class);
+        intent = new Intent().setClass(this, WriteActivity.class);
         spec = tabHost.newTabSpec("reci").setIndicator("RECI",
                 res.getDrawable(R.drawable.cash)).setContent(intent);
         tabHost.addTab(spec);

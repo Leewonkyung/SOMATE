@@ -19,7 +19,7 @@
         <activity android:name=".UserActivity"/>
         <activity android:name=".WriteActivity"/>
         <activity android:name=".CategoriActivity"/>
-        <activity android:name=".StepActivity"/>
+        <activity android:name=".MainActivity2"/>
 
     </application>
 

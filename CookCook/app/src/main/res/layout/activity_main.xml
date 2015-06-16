@@ -28,7 +28,9 @@
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:orientation="vertical"
-            android:id="@+id/linearLayout"/>
+            android:id="@+id/linearLayout">
+            </LinearLayout>
+
         <LinearLayout
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
