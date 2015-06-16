@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <LinearLayout
@@ -43,15 +43,25 @@
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:orientation="vertical">
-
+            android:orientation="vertical"
+            android:scrollbars="none"
+            android:layout_weight = "1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
             <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="350dp"
                 />
 
             <EditText
@@ -63,7 +73,9 @@
                 1cm길이로 어슷썰기 해주세요.
                 그리고 김치는 5cm로 썰어주세요."
                 />
+                </LinearLayout>
 
+        </ScrollView>
+            </LinearLayout>
         </LinearLayout>
-        </LinearLayout>
-</ScrollView>
+</LinearLayout>

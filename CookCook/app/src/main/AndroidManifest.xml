@@ -20,11 +20,10 @@
         <activity android:name=".WriteActivity"/>
         <activity android:name=".CategoriActivity"/>
         <activity android:name=".MainActivity2"/>
-<<<<<<< HEAD
         <activity android:name=".StepActivity"/>
-=======
         <activity android:name=".ReadActivity"/>
->>>>>>> cd1d0ff4ccf5d1d5d8fbd6bcf72c6f2b795ddac0
+
+        
 
     </application>
 
