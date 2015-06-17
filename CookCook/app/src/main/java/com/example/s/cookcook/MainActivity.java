@@ -19,15 +19,11 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String[] optionLavala = getResources().getStringArray(R.array.dataArray1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line,optionLavala);
         AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.edit);
-        String[] FOODLIST = new String[0];
-        ArrayAdapter adapter = new ArrayAdapter(this,
-                android.R.layout.simple_dropdown_item_1line, FOODLIST);
         textView.setAdapter(adapter);
-
-        FOODLIST = new String[]{
-                //검색할 단어 쓰기
-        };
 
         Resources res = getResources();
         TabHost tabHost = getTabHost();
