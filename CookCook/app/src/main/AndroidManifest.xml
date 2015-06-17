@@ -23,8 +23,7 @@
         <activity android:name=".MainActivity2"/>
         <activity android:name=".StepActivity"/>
         <activity android:name=".ReadActivity"/>
-
-        
+        <activity android:name=".RiceActivity"/>
 
     </application>
 

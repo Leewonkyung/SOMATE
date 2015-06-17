@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dataArray1" >
+        <item>김치찌개</item>
+        <item>김치볶음밥</item>
+        <item>김치전</item>
+        <item>참치찌개</item>
+        <item>순두부찌개</item>
+        <item>된장찌개</item>
+        <item>치즈떡볶이</item>
+        <item>치즈계란말이</item>
+        <item>치즈케이크</item>
+    </string-array>
+</resources>
