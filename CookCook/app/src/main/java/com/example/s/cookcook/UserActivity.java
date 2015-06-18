@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 public class UserActivity extends Activity{
 
     //private static final int PICK_FROM_CAMERA = 1;
+
     private static final int PICK_FROM_GALLERY = 2;
     private ImageView imgview;
     final int id=0;
@@ -36,8 +37,8 @@ public class UserActivity extends Activity{
         folder_add_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 AlertDialog.Builder alert = new AlertDialog.Builder(UserActivity.this);
-                alert.setTitle("Æú´õÃß°¡");
-                alert.setMessage("Ãß°¡ÇÒ Æú´õÀÇ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
+                alert.setTitle("í´ë”ì¶”ê°€");
+                alert.setMessage("ì¶”ê°€í•  í´ë”ì˜ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
                 final EditText input = new EditText(UserActivity.this);
                 alert.setView(input);
                 alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {

@@ -30,6 +30,7 @@
                 android:hint="참치를 넣은 김치찌개"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
+                android:id="@+id/edt_dishname"
                 />
             <!--바로 키보드가 뜨게 하고 싶지 않음 스크롤바에 none넣으니까 안보임!-->
         </LinearLayout>
@@ -54,15 +55,18 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="밥"/>
+                    android:text="밥"
+                    android:id="@+id/btn_cate1"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="국/찌개"/>
+                    android:text="국/찌개"
+                    android:id="@+id/btn_cate2"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="밑반찬"/>
+                    android:text="밑반찬"
+                    android:id="@+id/btn_cate3"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,15 +75,18 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="메인반찬"/>
+                    android:text="메인반찬"
+                    android:id="@+id/btn_cate4"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="일품요리"/>
+                    android:text="일품요리"
+                    android:id="@+id/btn_cate5"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="후식/간식"/>
+                    android:text="후식/간식"
+                    android:id="@+id/btn_cate6"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -103,6 +110,7 @@
                 양파 반개, 두부반모(선택)"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
+                android:id="@+id/edt_dishstuff"
                 />
         </LinearLayout>
         <LinearLayout
@@ -124,6 +132,7 @@
                 android:hint="2인분"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
+                android:id="@+id/edt_dishperson"
                 />
 
         </LinearLayout>

@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TabHost;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+
 
 /**
  * Created by moon3075 on 2015-06-17
@@ -20,8 +23,16 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+// Enable Local Datastore.
+        //Parse.enableLocalDatastore(this);
+        //위에껀 안써도 되나 봅니다....ㄷㄷㄷ
+        Parse.initialize(this, "Ef36aNYkL3qk9kqGAaYYgLmCuMrxPrhKpg2NgHHI", "jJv5HSwfDBi5LF0ckX9squCnqg1yFlIGHCL62P5M");
 
-
+/*
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
+*/
         startActivity(new Intent(this, LoadingActivity.class));
 
         String[] optionLavala = getResources().getStringArray(R.array.dataArray1);

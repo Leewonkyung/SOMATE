@@ -36,6 +36,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import com.example.s.cookcook.etc.BkUtils;
+import com.parse.ParseObject;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -62,6 +64,7 @@ public class StepActivity extends Activity implements OnClickListener {
     private LinearLayout mPageMark;			//현재 몇 페이지 인지 나타내는 뷰
     private BkPagerAdapter mAdapter;			//아답터 객체. 아이템을 추가 하기 위해 변수 선언
     private TextView txt_stepnum;
+    private Button btn_fin;
 
     /** Called when the activity is first created. */
     @Override
@@ -72,6 +75,8 @@ public class StepActivity extends Activity implements OnClickListener {
         mAddView = (Button)findViewById(R.id.btn_add);		//추가 버튼
         mAddView.setOnClickListener(this);						//클릭 리스너 등록
         txt_stepnum=(TextView)findViewById(R.id.txt_stepnum);
+        btn_fin=(Button)findViewById(R.id.btn_fin);
+
 
         mPager = (ViewPager)findViewById(R.id.pager);						//뷰 페이저
         mAdapter = new BkPagerAdapter(getApplicationContext());
@@ -160,6 +165,10 @@ public class StepActivity extends Activity implements OnClickListener {
             }
             else
                 Toast.makeText(getApplicationContext(), "최대 10개의 아이템만 등록 가능합니다. 소스를 수정하세요.", Toast.LENGTH_SHORT).show();
+        }
+        else if(v==btn_fin){
+
+            finish();
         }
     }
 }
