@@ -41,7 +41,10 @@
                 <ImageButton
                     android:id="@+id/user_image"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/logo"
+                />
             </LinearLayout>
 
             <!-- 아이디를 담을 부분-->
