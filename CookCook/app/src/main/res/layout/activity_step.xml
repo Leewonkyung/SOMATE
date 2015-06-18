@@ -7,66 +7,49 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_height="30dp"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:id="@+id/page_mark"/>
+        android:background="#ffeceae9"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
-
-    <RelativeLayout
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent">
-
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/btn_add"
-        android:text="Add View"
-        android:layout_alignParentRight="true"/>
+        <!-- 버튼안에 "<"쓰면 오류 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="1"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:id="@+id/txt_stepnum"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="단계"
+            android:textSize="20dp"
+            android:gravity="center"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_add"
+            android:text="+"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="finish"/>
+    </LinearLayout>
 
     <!--
     <Spinner android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/spinner_view_type" android:prompt="@string/title_view_type_spinner" android:entries="@array/view_type" android:layout_toLeftOf="@id/btn_add"/>-->
 
-</RelativeLayout>
 
     <android.support.v4.view.ViewPager
-        android:background="#fff6ffa4"
+        android:background="#ffffff"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:id="@+id/pager">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:orientation="vertical"
-            android:scrollbars="none">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <!--스크롤안에는 LinearLayout처럼 크게 감싸서 한개로 만들어야함-->
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="재료를 손질할꺼에요!
-                양파와 대파는 흐르는 물에 씻어주시고,
-                양파는 길게 썰어주시고, 대파는
-                1cm길이로 어슷썰기 해주세요.
-                그리고 김치는 5cm로 썰어주세요."
-                    />
-            </LinearLayout>
-
-        </ScrollView>
-
+        android:id="@+id/pager"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
         </android.support.v4.view.ViewPager>
 
 </LinearLayout>

@@ -4,19 +4,14 @@ import com.example.s.cookcook.R;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.AnalogClock;
-import android.widget.DigitalClock;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class BkUtils {
     /** 뷰페이저 아이템 종류 */
@@ -30,16 +25,7 @@ public class BkUtils {
      */
     public static View getView(int type, Context con) {
 
-       // return getTextView(con);
         return getScrollView(con);
-       /* if(type == TYPE_TEXTVIEW)
-            return getTextView(con);
-        else if(type == TYPE_SCROLLVIEW)
-            return getScrollView(con);
-        else if(type == TYPE_LISTVIEW)
-            return getListView(con);
-        else
-            return getDigitalClock(con);*/
     }
 
     /**
@@ -57,15 +43,19 @@ public class BkUtils {
         tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);		//글자 크기 24sp
 
         EditText b=new EditText(con);
-        b.setHint("                재료를 손질할꺼에요!\n" +
-                "                양파와 대파는 흐르는 물에 씻어주시고,\n" +
-                "                양파는 길게 썰어주시고, 대파는\n" +
-                "                1cm길이로 어슷썰기 해주세요.\n" +
-                "                그리고 김치는 5cm로 썰어주세요.");
-        b.setHintTextColor(Color.rgb(100,100,100));
-
+        b.setHint("재료를 손질할꺼에요!\n" +
+                "양파와 대파는 흐르는 물에 씻어주시고, " +
+                "양파는 길게 썰어주시고, " +
+                "대파는 1cm길이로 어슷썰기 해주세요. " +
+                "그리고 김치는 5cm로 썰어주세요.");
+        b.setHintTextColor(Color.rgb(100, 100, 100));
+        b.setTextColor(Color.rgb(0, 0, 0));
+        //edittext에 자동으로 focus되는 것을 막기 위해 해당 xml에서 linear layout (아마 아무거나 상관없을듯?)
+        //에 포커스를 주었다.
         return b;
     }
+
+
 
     /**
      * 여러개의 뷰가 있는 스크롤 뷰를 반환한다
@@ -86,36 +76,11 @@ public class BkUtils {
         return sv;
     }
 
-    /**
-     * 리스트 뷰를 생성하여 반환한다
-     * @param con - 뷰 생성에 사용할 Context
-     * @return 리스트 뷰
-     */
-
-    /*
-    private static ListView getListView(Context con) {
-        ListView lv = new ListView(con);
-        lv.setScrollingCacheEnabled(false);
-        lv.setAnimationCacheEnabled(false);
-
-        lv.setAdapter(new BkListViewAdapter(con));
-        return  lv;
-    }
-*/
     private static ImageView getImageView(Context con) {
         ImageView iv = new ImageView(con);
         iv.setImageResource(R.drawable.cate1);
+        iv.setPadding(0,100,0,100);
         return iv;
     }
-/*
-    private static AnalogClock getAnalogClock(Context con) {
-        AnalogClock clock = new AnalogClock(con);
-        return clock;
-    }
 
-    private static DigitalClock getDigitalClock(Context con){
-        return new DigitalClock(con);
-    }
-
-    */
 }

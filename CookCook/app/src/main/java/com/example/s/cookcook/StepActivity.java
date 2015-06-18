@@ -61,6 +61,7 @@ public class StepActivity extends Activity implements OnClickListener {
     private ViewPager mPager;					//뷰 페이저
     private LinearLayout mPageMark;			//현재 몇 페이지 인지 나타내는 뷰
     private BkPagerAdapter mAdapter;			//아답터 객체. 아이템을 추가 하기 위해 변수 선언
+    private TextView txt_stepnum;
 
     /** Called when the activity is first created. */
     @Override
@@ -70,6 +71,7 @@ public class StepActivity extends Activity implements OnClickListener {
 
         mAddView = (Button)findViewById(R.id.btn_add);		//추가 버튼
         mAddView.setOnClickListener(this);						//클릭 리스너 등록
+        txt_stepnum=(TextView)findViewById(R.id.txt_stepnum);
 
        // mViewTypeSpinner = (Spinner)findViewById(R.id.spinner_view_type);	//아이템 타입 선택하는 스피너
 
@@ -85,6 +87,9 @@ public class StepActivity extends Activity implements OnClickListener {
                 //mPageMark.getChildAt(mPrevPosition).setBackgroundResource(R.drawable.page_not);	//이전 페이지에 해당하는 페이지 표시 이미지 변경
                 //mPageMark.getChildAt(position).setBackgroundResource(R.drawable.page_select);		//현재 페이지에 해당하는 페이지 표시 이미지 변경
                 mPrevPosition = position;				//이전 포지션 값을 현재로 변경
+                Toast.makeText(getApplicationContext(), " jj"+position,Toast.LENGTH_SHORT).show();
+                txt_stepnum.setText(Integer.toString(position+1));
+
             }
             @Override public void onPageScrolled(int position, float positionOffest, int positionOffsetPixels) {}
             @Override public void onPageScrollStateChanged(int state) {}
@@ -168,155 +173,3 @@ public class StepActivity extends Activity implements OnClickListener {
 
 //++
 
-
-
-
-/*
-public class StepActivity extends ActionBarActivity {
-    int MAX_PAGE = 3;
-    Fragment cur_fragment = new Fragment();
-
-    //++
-    private final int COUNT = 10;
-    private int[] mColorArray = {Color.YELLOW, Color.BLUE, Color.CYAN, Color.DKGRAY, Color.GRAY,
-            Color.GREEN, Color.LTGRAY, Color.MAGENTA, Color.RED, Color.WHITE};
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_read);
-
-        ViewPager viewPager = (ViewPager) findViewById((R.id.viewpager));
-        viewPager.setAdapter(new adapter(getSupportFragmentManager()));
-    }
-
-    private class adapter extends FragmentPagerAdapter {
-        public adapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            if (position < 0 || MAX_PAGE <= position)
-                return null;
-            switch (position) {
-                case 0:
-                    cur_fragment = new page_1();
-                    break;
-                case 1:
-                    //cur_fragment = new page_2();
-                    break;
-                case 2:
-                    //cur_fragment = new page_3();
-                    break;
-            }
-            return cur_fragment;
-        }
-
-        @Override
-        public int getCount() {
-            return MAX_PAGE;
-        }
-
-        public class page_1 extends android.support.v4.app.Fragment {
-            @Override
-            public void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-            }
-
-            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                LinearLayout linearLayout = (LinearLayout) inflater.inflate(R.layout.activity_step, container, false);
-               /* LinearLayout background=(LinearLayout)linearLayout.findViewById(R.id.background);
-                TextView page_num=(TextView)linearLayout.findViewById(R.id.page_num);
-                page_num.setText(String.valueOf(1));
-                background.setBackground(new ColorDrawable(0xff6dc6d2));*/
-/*
-                return linearLayout;
-            }
-        }
-    }
-
-    //++
-
-    //Pager 아답터 구현
-    private class BkPagerAdapter extends PagerAdapter {
-        private Context mContext;
-
-        public BkPagerAdapter(Context con) {
-            super();
-            mContext = con;
-        }
-
-        @Override
-        public int getCount() {
-            return COUNT;
-        }    //여기서는 2개만 할 것이다.
-
-        //뷰페이저에서 사용할 뷰객체 생성/등록
-        @Override
-        public Object instantiateItem(View pager, int position) {
-            TextView tv = new TextView(mContext);                    //텍스트뷰
-            tv.setBackgroundColor(mColorArray[position]);            //배경색 지정
-            tv.setText("ViewPager Item" + (position + 1));                //글자지정
-            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);        //글자 크기 24sp
-            tv.setTextColor(mColorArray[mColorArray.length - (position + 1)]);    //글자 색상은 배경과 다른 색으로
-            ((ViewPager) pager).addView(tv, 0);        //뷰 페이저에 추가
-
-            return tv;
-        }
-
-        //뷰 객체 삭제.
-        @Override
-        public void destroyItem(View pager, int position, Object view) {
-            ((ViewPager) pager).removeView((View) view);
-        }
-        //++
-
-    }
-}
-
-        public class page_2 extends android.support.v4.app.Fragment {
-            @Override
-            public void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-            }
-            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                LinearLayout linearLayout=(LinearLayout)inflater.inflate(R.layout.activity_viewpager,container,false);
-                LinearLayout background=(LinearLayout)linearLayout.findViewById(R.id.background);
-                TextView page_num=(TextView)linearLayout.findViewById(R.id.page_num);
-                page_num.setText(String.valueOf(2));
-                background.setBackground(new ColorDrawable(0xff26abb5));
-                return linearLayout;
-            }
-        }
-
-        public class page_3 extends android.support.v4.app.Fragment {
-            @Override
-            public void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-            }
-            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                LinearLayout linearLayout=(LinearLayout)inflater.inflate(R.layout.activity_viewpager,container,false);
-                LinearLayout background=(LinearLayout)linearLayout.findViewById(R.id.background);
-                TextView page_num=(TextView)linearLayout.findViewById(R.id.page_num);
-                page_num.setText(String.valueOf(3));
-                background.setBackground(new ColorDrawable(0xff008c9e));
-                return linearLayout;
-            }
-        }*/
-
-/*
-public class StepActivity extends Activity {
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step);
-    }
-
-}
-*/
