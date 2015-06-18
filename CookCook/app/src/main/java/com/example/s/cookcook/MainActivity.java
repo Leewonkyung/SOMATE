@@ -19,6 +19,8 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        startActivity(new Intent(this, LoadingActivity.class));
+
         String[] optionLavala = getResources().getStringArray(R.array.dataArray1);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line,optionLavala);

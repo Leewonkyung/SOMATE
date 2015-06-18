@@ -24,7 +24,8 @@
         <activity android:name=".StepActivity"/>
         <activity android:name=".ReadActivity"/>
         <activity android:name=".RiceActivity"/>
-
+        <activity android:name=".LoadingActivity"
+            android:theme="@android:style/Theme.NoTitleBar"/>
     </application>
 
 </manifest>
