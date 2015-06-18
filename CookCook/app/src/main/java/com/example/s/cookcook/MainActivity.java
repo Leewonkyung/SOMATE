@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TabHost;
 
+
 /**
  * Created by moon3075 on 2015-06-17
  */
@@ -18,6 +19,8 @@ public class MainActivity extends TabActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         startActivity(new Intent(this, LoadingActivity.class));
 

@@ -73,10 +73,6 @@ public class StepActivity extends Activity implements OnClickListener {
         mAddView.setOnClickListener(this);						//클릭 리스너 등록
         txt_stepnum=(TextView)findViewById(R.id.txt_stepnum);
 
-       // mViewTypeSpinner = (Spinner)findViewById(R.id.spinner_view_type);	//아이템 타입 선택하는 스피너
-
-        //mPageMark = (LinearLayout)findViewById(R.id.page_mark);			//상단의 현재 페이지 나타내는 뷰
-
         mPager = (ViewPager)findViewById(R.id.pager);						//뷰 페이저
         mAdapter = new BkPagerAdapter(getApplicationContext());
 
@@ -84,9 +80,6 @@ public class StepActivity extends Activity implements OnClickListener {
         mPager.setOnPageChangeListener(new OnPageChangeListener() {	//아이템이 변경되면, gallery나 listview의 onItemSelectedListener와 비슷
             //아이템이 선택이 되었으면
             @Override public void onPageSelected(int position) {
-                //mPageMark.getChildAt(mPrevPosition).setBackgroundResource(R.drawable.page_not);	//이전 페이지에 해당하는 페이지 표시 이미지 변경
-                //mPageMark.getChildAt(position).setBackgroundResource(R.drawable.page_select);		//현재 페이지에 해당하는 페이지 표시 이미지 변경
-                mPrevPosition = position;				//이전 포지션 값을 현재로 변경
                 Toast.makeText(getApplicationContext(), " jj"+position,Toast.LENGTH_SHORT).show();
                 txt_stepnum.setText(Integer.toString(position+1));
 

@@ -78,7 +78,7 @@ public class BkUtils {
 
     private static ImageView getImageView(Context con) {
         ImageView iv = new ImageView(con);
-        iv.setImageResource(R.drawable.cate1);
+        iv.setImageResource(R.drawable.image);
         iv.setPadding(0,100,0,100);
         return iv;
     }
