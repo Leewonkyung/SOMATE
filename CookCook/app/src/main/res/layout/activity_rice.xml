@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="밥메뉴 보여줄곳 "/>
+        android:drawableLeft="@drawable/rice11"
+        android:text="김치볶음밥 만들기"
+        android:background="#FAF4C0"
+        android:layout_marginTop="5dp"
+        android:textSize="12pt"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/rice22"
+        android:text="해물리조또 만들기"
+        android:background="#FAF4C0"
+        android:layout_marginTop="5dp"
+        android:textSize="12pt"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/rice33"
+        android:text="계란말이김밥 만들기"
+        android:background="#FAF4C0"
+        android:layout_marginTop="5dp"
+        android:textSize="12pt"/>
 
 </LinearLayout>
