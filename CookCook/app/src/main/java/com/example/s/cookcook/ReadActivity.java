@@ -40,7 +40,7 @@ public class ReadActivity extends ActionBarActivity {
                 return null;
             switch(position) {
                 case 0:
-                    cur_fragment = new page_1();
+                    cur_fragment = new page_1(R.drawable.view1);
                     break;
                 case 1:
                     cur_fragment = new page_2();
@@ -57,6 +57,11 @@ public class ReadActivity extends ActionBarActivity {
             return MAX_PAGE;
         }
         public class page_1 extends android.support.v4.app.Fragment {
+            int id;
+
+            public page_1(int id){
+                this.id=id;
+            }
             @Override
             public void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
@@ -64,7 +69,7 @@ public class ReadActivity extends ActionBarActivity {
             @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                LinearLayout linearLayout=(LinearLayout)inflater.inflate(R.layout.activity_viewpager,container,false);
+                LinearLayout linearLayout=(LinearLayout)inflater.inflate(R.layout.activity_viewpager, container, false);
                 LinearLayout background=(LinearLayout)linearLayout.findViewById(R.id.background);
                 TextView page_num=(TextView)linearLayout.findViewById(R.id.page_num);
                 page_num.setText(String.valueOf(1));
@@ -81,7 +86,7 @@ public class ReadActivity extends ActionBarActivity {
             @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                LinearLayout linearLayout=(LinearLayout)inflater.inflate(R.layout.activity_viewpager,container,false);
+                LinearLayout linearLayout=(LinearLayout)inflater.inflate(R.layout.activity_imageview2, container, false);
                 LinearLayout background=(LinearLayout)linearLayout.findViewById(R.id.background);
                 TextView page_num=(TextView)linearLayout.findViewById(R.id.page_num);
                 page_num.setText(String.valueOf(2));
@@ -98,7 +103,7 @@ public class ReadActivity extends ActionBarActivity {
             @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                LinearLayout linearLayout=(LinearLayout)inflater.inflate(R.layout.activity_viewpager,container,false);
+                LinearLayout linearLayout=(LinearLayout)inflater.inflate(R.layout.activity_imageview3, container, false);
                 LinearLayout background=(LinearLayout)linearLayout.findViewById(R.id.background);
                 TextView page_num=(TextView)linearLayout.findViewById(R.id.page_num);
                 page_num.setText(String.valueOf(3));
